@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'BB Sans';
+  src: url('BBSans-Regular.eot');
+  src: url('BBSans-Regular.eot?#iefix') format('embedded-opentype'),
+    url('BBSans-Regular.woff2') format('woff2'),
+    url('BBSans-Regular.woff') format('woff'),
+    url('BBSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('NotoSans-Regular.eot');
+  src: url('NotoSans-Regular.eot?#iefix') format('embedded-opentype'),
+    url('NotoSans-Regular.woff2') format('woff2'),
+    url('NotoSans-Regular.woff') format('woff'),
+    url('NotoSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: url('BrandonText-Medium.eot');
+  src: url('BrandonText-Medium.eot?#iefix') format('embedded-opentype'),
+    url('BrandonText-Medium.woff2') format('woff2'),
+    url('BrandonText-Medium.woff') format('woff'),
+    url('BrandonText-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}

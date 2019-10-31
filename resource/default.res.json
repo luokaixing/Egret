@@ -1,0 +1,215 @@
+{
+	"groups": [
+		{
+			"keys": "yellow_round_png,white_round_png,black_round_png,yellow_png,white_png,black_png,bg_jpg,description_json,title_png,title_en_png,title_kr_png,music_png,red_light_png,green_out_light_png,red_out_light_png,yellow_out_light_png,rule_png,rule_en_png,rule_kr_png,game_over_png,game_over_kr_png,game_over_en_png,success_png,success_kr_png,success_en_png,result_png,result_kr_png,result_en_png,shop_png,shop_kr_png,shop_en_png,shop_list_png,shop_list_kr_png,shop_list_en_png,music_pause_png,click_mp3,p1_b_png,p1_g_png,p1_y_png,loading_gif",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/p1-b.png",
+			"type": "image",
+			"name": "p1_b_png"
+		},
+		{
+			"url": "assets/loading.gif",
+			"type": "image",
+			"name": "loading_gif"
+		},
+		{
+			"url": "assets/p1-g.png",
+			"type": "image",
+			"name": "p1_g_png"
+		},
+		{
+			"url": "assets/p1-y.png",
+			"type": "image",
+			"name": "p1_y_png"
+		},
+		{
+			"url": "assets/bg.png",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "assets/music.mp3",
+			"type": "sound",
+			"name": "music_mp3"
+		},
+		{
+			"url": "assets/shop_kr.png",
+			"type": "image",
+			"name": "shop_kr_png"
+		},
+		{
+			"url": "assets/shop_en.png",
+			"type": "image",
+			"name": "shop_en_png"
+		},
+		{
+			"url": "assets/shop.png",
+			"type": "image",
+			"name": "shop_png"
+		},
+		{
+			"url": "assets/shop_list_kr.png",
+			"type": "image",
+			"name": "shop_list_kr_png"
+		},
+		{
+			"url": "assets/shop_list_en.png",
+			"type": "image",
+			"name": "shop_list_en_png"
+		},
+		{
+			"url": "assets/shop_list.png",
+			"type": "image",
+			"name": "shop_list_png"
+		},
+		{
+			"url": "assets/result_kr.png",
+			"type": "image",
+			"name": "result_kr_png"
+		},
+		{
+			"url": "assets/result_en.png",
+			"type": "image",
+			"name": "result_en_png"
+		},
+		{
+			"url": "assets/result.png",
+			"type": "image",
+			"name": "result_png"
+		},
+		{
+			"url": "assets/success_kr.png",
+			"type": "image",
+			"name": "success_kr_png"
+		},
+		{
+			"url": "assets/success_en.png",
+			"type": "image",
+			"name": "success_en_png"
+		},
+		{
+			"url": "assets/success.png",
+			"type": "image",
+			"name": "success_png"
+		},
+		{
+			"url": "assets/game_over.png",
+			"type": "image",
+			"name": "game_over_png"
+		},
+		{
+			"url": "assets/game_over_kr.png",
+			"type": "image",
+			"name": "game_over_kr_png"
+		},
+		{
+			"url": "assets/game_over_en.png",
+			"type": "image",
+			"name": "game_over_en_png"
+		},
+		{
+			"url": "assets/rule.png",
+			"type": "image",
+			"name": "rule_png"
+		},
+		{
+			"url": "assets/rule-en.png",
+			"type": "image",
+			"name": "rule_en_png"
+		},
+		{
+			"url": "assets/rule-kr.png",
+			"type": "image",
+			"name": "rule_kr_png"
+		},
+		{
+			"url": "assets/red_out_light.png",
+			"type": "image",
+			"name": "red_out_light_png"
+		},
+		{
+			"url": "assets/yellow_out_light.png",
+			"type": "image",
+			"name": "yellow_out_light_png"
+		},
+		{
+			"url": "assets/green_out_light.png",
+			"type": "image",
+			"name": "green_out_light_png"
+		},
+		{
+			"url": "assets/red_light.png",
+			"type": "image",
+			"name": "red_light_png"
+		},
+		{
+			"url": "assets/music_pause.png",
+			"type": "image",
+			"name": "music_pause_png"
+		},
+		{
+			"url": "assets/music.png",
+			"type": "image",
+			"name": "music_png"
+		},
+		{
+			"url": "assets/white-round.png",
+			"type": "image",
+			"name": "white_round_png"
+		},
+		{
+			"url": "assets/title-en.png",
+			"type": "image",
+			"name": "title_en_png"
+		},
+		{
+			"url": "assets/title-kr.png",
+			"type": "image",
+			"name": "title_kr_png"
+		},
+		{
+			"url": "assets/title.png",
+			"type": "image",
+			"name": "title_png"
+		},
+		{
+			"url": "assets/black-round.png",
+			"type": "image",
+			"name": "black_round_png"
+		},
+		{
+			"url": "assets/yellow-round.png",
+			"type": "image",
+			"name": "yellow_round_png"
+		},
+		{
+			"url": "assets/yellow.png",
+			"type": "image",
+			"name": "yellow_png"
+		},
+		{
+			"url": "assets/white.png",
+			"type": "image",
+			"name": "white_png"
+		},
+		{
+			"url": "assets/black.png",
+			"type": "image",
+			"name": "black_png"
+		},
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/click.mp3",
+			"type": "sound",
+			"name": "click_mp3"
+		}
+	]
+}

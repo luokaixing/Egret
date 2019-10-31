@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="full-screen" content="true" />
+	<meta name="screen-orientation" content="portrait" />
+	<meta name="x5-fullscreen" content="true" />
+	<meta name="360-fullscreen" content="true" />
+	<link rel="stylesheet" href="../game/resource/assets/fonts/stylesheet.css">
+
+	<style>
+		html,
+		body {
+			-ms-touch-action: none;
+			background: #888888;
+			padding: 0;
+			border: 0;
+			margin: 0;
+			height: 100%;
+			font-family: "Avenir Next", -apple-system, "Noto Sans", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif !important;
+			position: relative;
+		}
+
+		.egret-player {
+			margin: auto;
+			width: 100%;
+			height: 100%;
+			background-color: #000;
+			position: relative;
+		}
+
+		#music-controller {
+			position: absolute;
+			width: 1.5rem;
+			height: 1.5rem;
+			background-image: url(/resource/assets/music.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			z-index: 3;
+		}
+
+		#music-controller.paused {
+			background-image: url(/resource/assets/music_pause.png);
+		}
+
+		@media all and (orientation : portrait) {
+			#music-controller {
+				right: 1rem;
+				top: 6rem;
+			}
+		}
+
+		/* 设备横屏时调用该段css代码 */
+		@media all and (orientation : landscape) {
+			#music-controller {
+				top: 1rem;
+				left: 6rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="egret-player" data-entry-class="Main" data-orientation="landscape" data-scale-mode="showAll"
+		data-frame-rate="30" data-content-width="1334" data-content-height="750" data-show-paint-rect="false"
+		data-multi-fingered="2" data-show-fps="false" data-show-log="false"
+		data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+	</div>
+	<div id="ticket">
+		<img src="" alt="" id='ticket_img'>
+	</div>
+	<div id="music-controller"></div>
+	<audio id="music" src="/game/resource/assets/music.mp3" loop autoplay></audio>
+	<script>
+		var loadScript = function (list, callback) {
+			var loaded = 0;
+			var loadNext = function () {
+				loadSingleScript(list[loaded], function () {
+					loaded++;
+					if (loaded >= list.length) {
+						callback();
+					} else {
+						loadNext();
+					}
+				})
+			};
+			loadNext();
+		};
+
+		var loadSingleScript = function (src, callback) {
+			var s = document.createElement('script');
+			s.async = false;
+			s.src = src;
+			s.addEventListener('load', function () {
+				s.parentNode.removeChild(s);
+				s.removeEventListener('load', arguments.callee, false);
+				callback();
+			}, false);
+			document.body.appendChild(s);
+		};
+
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+		xhr.addEventListener("load", function () {
+			var manifest = JSON.parse(xhr.response);
+			var list = manifest.initial.concat(manifest.game);
+			loadScript(list, function () {
+				/**
+				 * {
+				 * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+				 * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+				 * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+				 * "calculateCanvasScaleFactor": //a function return canvas scale factor
+				 * }
+				 **/
+				egret.runEgret({
+					renderMode: "webgl",
+					audioType: 0,
+					calculateCanvasScaleFactor: function (context) {
+						var backingStore = context.backingStorePixelRatio ||
+							context.webkitBackingStorePixelRatio ||
+							context.mozBackingStorePixelRatio ||
+							context.msBackingStorePixelRatio ||
+							context.oBackingStorePixelRatio ||
+							context.backingStorePixelRatio || 1;
+						return (window.devicePixelRatio || 1) / backingStore;
+					}
+				});
+			});
+		});
+		xhr.send(null);
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+	<script>
+		const music = document.getElementById('music');
+
+		$('#music-controller').on('touchend', function () {
+			if (music.paused) {
+				music.play();
+				$('#music-controller').removeClass('paused');
+			} else {
+				music.pause();
+				$('#music-controller').addClass('paused');
+			}
+		});
+
+		wx.config({
+			debug: false,
+			appId: 'A',
+			timestamp: 1,
+			nonceStr: 'A',
+			signature: 'A',
+			jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData']
+		});
+
+		wx.ready(function () {
+			music.play();
+		});
+
+		wx.error(function (res) {
+			console.log(res);
+		});
+	</script>
+</body>
+
+</html>
